@@ -6,39 +6,39 @@ import java.util.Scanner;
 
 public class MoodAnalyser {
     String message;
-
-    public MoodAnalyser() {
+    MoodAnalyser(){
 
     }
 
-    public MoodAnalyser(String message) {
+    MoodAnalyser(String msg){
         this.message = message;
     }
-
-    public String analyseMood() {
+    String analyseMood(){
         return analyseMood(message);
     }
+    String analyseMood(String message){
+        String stringArray[] = message.split(" ");
+        String result = " ";
 
-    public String analyseMood(String message) {
-        String split[] = message.split(" ");
-
-        String messageToReturn = "";
-
-        for (String var : split) {
-            if (var.equalsIgnoreCase("Sad")) {
-                messageToReturn = var;
-                break;
-            } else if (var.equalsIgnoreCase("Happy")) {
-                messageToReturn = var;
-                break;
+        try {
+            for (String var : stringArray) {
+                if (var.equalsIgnoreCase("happy")) {
+                    result = "Happy";
+                    break;
+                } else if (var.equalsIgnoreCase("sad")) {
+                    result = "Sad";
+                    break;
+                }
             }
+        } catch (NullPointerException e){
+            result = "Happy";
         }
 
-        if (messageToReturn.equals("")) {
-            return "Happy";
+        if(result.equals(" ")){
+            result = "Happy";
         }
 
-        return messageToReturn;
+        return result;
     }
 /*
 call all method in main method

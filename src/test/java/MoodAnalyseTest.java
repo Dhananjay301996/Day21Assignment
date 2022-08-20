@@ -33,4 +33,11 @@ test for Happy mood
         String result = moodAnalyser.analyseMood("I am in Happy mood");
         assertEquals("Happy",result);
     }
+
+    @Test
+    public void givenNullShopuldreturnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        String result = moodAnalyser.analyseMood("");
+        assertEquals("Happy",result);
+    }
 }
