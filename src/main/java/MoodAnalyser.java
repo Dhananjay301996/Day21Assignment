@@ -20,7 +20,9 @@ public class MoodAnalyser {
         String stringArray[] = message.split(" ");
         String result = " ";
 
+
         try {
+
             for (String var : stringArray) {
                 if (var.equalsIgnoreCase("happy")) {
                     result = "Happy";
